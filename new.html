@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        background-color: antiquewhite;
+      }
+      .b1 {
+        background-color: white;
+        color: blue;
+        width: 50%;
+        margin: 0 auto;
+        padding: 12px;
+        margin-top: 30vh;
+      }
+      /* body>div>*{
+            background-color: inherit;
+            color:black;
+        } */
+        span{
+          margin: 1%;
+          color:seagreen
+        }
+        input{
+          margin: 1%;
+
+          width: 100%;
+        }
+        button{
+          width: 100%;
+          margin: 1%;
+          padding: 10px;
+          background-color: greenyellow;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="b1">
+      <div><h4>Tip Calcultor</h4></div>
+      <p>CALCULATE your tip here</p>
+      <br/>
+      <p>Bill amount</p>
+      <input type="number" id="inp1" />
+      <br/>
+
+      <p>Tip Percentage</p>
+      <input type="number" id="inp2" />
+    
+
+      
+        <br>
+        <button id="b1">Calculate</button>
+      <p>Total Amount to be paid</p>
+      <span id="ans"></span>
+    </div>
+    <script>
+      var amount = 0;
+      var total = 0;
+
+
+     const  ele = document.getElementById('b1').addEventListener('click', function() {
+      let billAmt = parseFloat(document.getElementById('inp1').value);
+      let tip = parseFloat(document.getElementById('inp2').value);
+      let tipAmt = (billAmt*tip)/100;
+      amount = billAmt + tipAmt;
+      document.getElementById('ans').innerText=amount
+      console.log(amount)
+
+      })
+    </script>
+  </body>
+</html>
